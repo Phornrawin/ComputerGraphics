@@ -93,7 +93,7 @@ def create_shaders():
     vert_id = glCreateShader(GL_VERTEX_SHADER)
     frag_id = glCreateShader(GL_FRAGMENT_SHADER)
 
-    vert_code = b'''
+    vert_code = b''' /nko
 #version 120
 varying vec3 color;
 void main()
@@ -108,6 +108,8 @@ void main()
 {
    gl_FragColor = texture2D(texture, *20gl_TexCoord[0].st);
 }'''
+
+#ตัวแปร unifrom จะคงที่ตลอด
     glShaderSource(vert_id, vert_code)
     glShaderSource(frag_id, frag_code)
 
